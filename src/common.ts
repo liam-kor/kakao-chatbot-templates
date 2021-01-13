@@ -66,10 +66,7 @@ export class Component {
 }
 
 export class Template extends Component {
-  constructor(
-    outputs: BasicCard[] | CommerceCard[] | SimpleText[] | SimpleImage[],
-    quickReplies?: QuickReply[],
-  ) {
+  constructor(outputs: Record<string, any>[], quickReplies?: QuickReply[]) {
     const fields = {
       outputs: outputs,
       quickReplies: quickReplies,

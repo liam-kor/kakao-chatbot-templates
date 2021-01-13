@@ -1,6 +1,4 @@
-import { BasicCard, CommerceCard } from './cards';
 import { QuickReply } from './directions';
-import { SimpleImage, SimpleText } from './simple';
 export interface ContextValue {
     name: string;
     lifeSpan: number;
@@ -20,7 +18,7 @@ export declare class Component {
     toJSON(): {};
 }
 export declare class Template extends Component {
-    constructor(outputs: BasicCard[] | CommerceCard[] | SimpleText[] | SimpleImage[], quickReplies?: QuickReply[]);
+    constructor(outputs: Record<string, any>[], quickReplies?: QuickReply[]);
 }
 export declare class SkillResponse extends Component {
     constructor(template: Template, context?: Context, data?: Record<string, any>);
