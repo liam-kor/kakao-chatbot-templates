@@ -20,13 +20,13 @@ export interface ICommerceCard {
 }
 
 export class BasicCard extends Component {
-  constructor(fields: IBasicCard, data?: any) {
+  constructor(fields: IBasicCard, data?: Record<string, any>) {
     super(fields, 'basicCard', data);
   }
 }
 
 export class CommerceCard extends Component {
-  constructor(fields: ICommerceCard, data?: any) {
+  constructor(fields: ICommerceCard, data?: Record<string, any>) {
     super(fields, 'commerceCard', data);
   }
 }
@@ -51,7 +51,7 @@ export class CarouselHeader extends Component {
     title: string,
     description: string,
     thumbnail: Thumbnail,
-    data?: any,
+    data?: Record<string, any>,
   ) {
     const fields = {
       title: title,

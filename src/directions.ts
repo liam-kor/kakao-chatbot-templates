@@ -22,7 +22,7 @@ export interface IQuickReply {
 }
 
 export class Button extends Component {
-  constructor(fields: IButton, data?: any) {
+  constructor(fields: IButton, data?: Record<string, any>) {
     super(fields, 'button', data);
   }
 
@@ -38,7 +38,7 @@ export class Button extends Component {
 }
 
 export class QuickReply extends Component {
-  constructor(fields: IQuickReply, data?: any) {
+  constructor(fields: IQuickReply, data?: Record<string, any>) {
     super(fields, 'quickReply', data);
   }
 

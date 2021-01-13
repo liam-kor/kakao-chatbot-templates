@@ -1,7 +1,19 @@
 import pupa from 'pupa';
+import { BasicCard, CommerceCard } from './cards';
 import { QuickReply } from './directions';
+import { SimpleImage, SimpleText } from './simple';
 
-const replace = (fields: any, data: any) => {
+export interface ContextValue {
+  name: string;
+  lifeSpan: number;
+  params: Record<string, any>;
+}
+
+export interface Context {
+  values: ContextValue[];
+}
+
+const replace = (fields: Record<string, any>, data: Record<string, any>) => {
   for (const [key, value] of Object.entries(fields)) {
     if (typeof value === 'string') {
       fields = Object.assign(fields, {
@@ -24,13 +36,17 @@ export class Component {
   fields = {};
   type = '';
 
-  constructor(fields: any, type: string, data?: any) {
+  constructor(
+    fields: Record<string, any>,
+    type: string,
+    data?: Record<string, any>,
+  ) {
     this.fields = fields;
     this.type = type;
     this.insertData(data);
   }
 
-  insertData(data: any) {
+  insertData(data: Record<string, any> | undefined) {
     if (data && Object.entries(data).length > 0) {
       this.fields = replace(this.fields, data);
     }
@@ -50,7 +66,10 @@ export class Component {
 }
 
 export class Template extends Component {
-  constructor(outputs: any[], quickReplies?: QuickReply[]) {
+  constructor(
+    outputs: BasicCard[] | CommerceCard[] | SimpleText[] | SimpleImage[],
+    quickReplies?: QuickReply[],
+  ) {
     const fields = {
       outputs: outputs,
       quickReplies: quickReplies,
@@ -60,7 +79,11 @@ export class Template extends Component {
 }
 
 export class SkillResponse extends Component {
-  constructor(template: Template, context?: any, data?: any) {
+  constructor(
+    template: Template,
+    context?: Context,
+    data?: Record<string, any>,
+  ) {
     const fields = {
       version: '2.0',
       template: template,
@@ -92,7 +115,7 @@ export interface ILink {
 }
 
 export class Thumbnail extends Component {
-  constructor(fields: IThumbnail, data?: any) {
+  constructor(fields: IThumbnail, data?: Record<string, any>) {
     super(fields, 'thumbnail', data);
   }
 }

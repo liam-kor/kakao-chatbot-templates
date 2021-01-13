@@ -2,7 +2,7 @@ import { BasicCard, Carousel, CarouselHeader, CommerceCard } from './cards';
 
 export const createCarouselWithData = (
   card: CommerceCard | BasicCard,
-  dataList: any,
+  dataList: Record<string, any>[],
   header?: CarouselHeader,
 ) => {
   const items = [];
