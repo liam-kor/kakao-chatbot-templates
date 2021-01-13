@@ -4,6 +4,7 @@
   "description": "For It is a package to use Kakao OpenBuilder's skill template more easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "prepublish": "tsc",
   "scripts": {
     "build": "tsc",
     "test": "jest",
