@@ -1,19 +1,29 @@
+import { BasicCard, CommerceCard } from './cards';
 import { QuickReply } from './directions';
+import { SimpleImage, SimpleText } from './simple';
+export interface ContextValue {
+    name: string;
+    lifeSpan: number;
+    params: Record<string, any>;
+}
+export interface Context {
+    values: ContextValue[];
+}
 export declare class Component {
     fields: {};
     type: string;
-    constructor(fields: any, type: string, data?: any);
-    insertData(data: any): void;
+    constructor(fields: Record<string, any>, type: string, data?: Record<string, any>);
+    insertData(data: Record<string, any> | undefined): void;
     render(): {
         [x: string]: {};
     };
     toJSON(): {};
 }
 export declare class Template extends Component {
-    constructor(outputs: any[], quickReplies?: QuickReply[]);
+    constructor(outputs: BasicCard[] | CommerceCard[] | SimpleText[] | SimpleImage[], quickReplies?: QuickReply[]);
 }
 export declare class SkillResponse extends Component {
-    constructor(template: Template, context?: any, data?: any);
+    constructor(template: Template, context?: Context, data?: Record<string, any>);
     render(): {};
 }
 export interface IThumbnail {
@@ -29,5 +39,5 @@ export interface ILink {
     web?: string;
 }
 export declare class Thumbnail extends Component {
-    constructor(fields: IThumbnail, data?: any);
+    constructor(fields: IThumbnail, data?: Record<string, any>);
 }

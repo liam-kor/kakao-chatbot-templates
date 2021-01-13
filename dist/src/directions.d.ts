@@ -18,11 +18,11 @@ export interface IQuickReply {
     extra?: any;
 }
 export declare class Button extends Component {
-    constructor(fields: IButton, data?: any);
+    constructor(fields: IButton, data?: Record<string, any>);
     insertData(data: any): void;
 }
 export declare class QuickReply extends Component {
-    constructor(fields: IQuickReply, data?: any);
+    constructor(fields: IQuickReply, data?: Record<string, any>);
     insertData(data: any): void;
 }
 export {};

@@ -17,10 +17,10 @@ export interface ICommerceCard {
     discountPrice?: number;
 }
 export declare class BasicCard extends Component {
-    constructor(fields: IBasicCard, data?: any);
+    constructor(fields: IBasicCard, data?: Record<string, any>);
 }
 export declare class CommerceCard extends Component {
-    constructor(fields: ICommerceCard, data?: any);
+    constructor(fields: ICommerceCard, data?: Record<string, any>);
 }
 export interface CommerceCarouselData {
     thumbnails: Thumbnail[];
@@ -36,7 +36,7 @@ export interface BasicCarouselData {
     buttons?: Button[];
 }
 export declare class CarouselHeader extends Component {
-    constructor(title: string, description: string, thumbnail: Thumbnail, data?: any);
+    constructor(title: string, description: string, thumbnail: Thumbnail, data?: Record<string, any>);
 }
 export declare class Carousel extends Component {
     constructor(items: CommerceCard[] | BasicCard[], header?: CarouselHeader);
