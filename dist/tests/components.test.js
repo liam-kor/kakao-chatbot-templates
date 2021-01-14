@@ -12,6 +12,7 @@ describe('Component test', () => {
         description: 'description sample',
         price: 10000,
         order_id: 1234,
+        webLinkUrl: 'https://abc.com/webLinkUrl',
     };
     const testDataList = [
         {
@@ -20,6 +21,7 @@ describe('Component test', () => {
             imageUrl: 'https://naver.com/1',
             price: 10000,
             order_id: 1111,
+            webLinkUrl: 'https://abc.com/webLinkUrl',
         },
         {
             title: 'title sample 2',
@@ -27,6 +29,7 @@ describe('Component test', () => {
             imageUrl: 'https://naver.com/2',
             price: 20000,
             order_id: 2222,
+            webLinkUrl: 'https://abc.com/webLinkUrl',
         },
     ];
     const imageUrlSample = 'https://naver.com/test.jpg';
@@ -82,6 +85,7 @@ describe('Component test', () => {
             title: '{title}',
             description: '{description}',
             thumbnail: dynamicThumbnailSample,
+            buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
         console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testData).render(), null, 2));
     });
@@ -90,6 +94,7 @@ describe('Component test', () => {
             title: '{title}',
             description: '{description}',
             thumbnail: dynamicThumbnailSample,
+            buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
         console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testDataList).render(), null, 2));
     });

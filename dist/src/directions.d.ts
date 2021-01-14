@@ -21,6 +21,9 @@ export declare class Button extends Component {
     constructor(fields: IButton, data?: Record<string, any>);
     insertData(data: any): void;
 }
+export declare class WebLinkButton extends Button {
+    constructor(label: string, webLinkUrl: string, data?: Record<string, any>);
+}
 export declare class QuickReply extends Component {
     constructor(fields: IQuickReply, data?: Record<string, any>);
     insertData(data: any): void;

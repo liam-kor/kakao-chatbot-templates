@@ -37,6 +37,19 @@ export class Button extends Component {
   }
 }
 
+export class WebLinkButton extends Button {
+  constructor(label: string, webLinkUrl: string, data?: Record<string, any>) {
+    super(
+      {
+        label: label,
+        action: 'webLink',
+        webLinkUrl: webLinkUrl,
+      },
+      data,
+    );
+  }
+}
+
 export class QuickReply extends Component {
   constructor(fields: IQuickReply, data?: Record<string, any>) {
     super(fields, 'quickReply', data);

@@ -1,7 +1,7 @@
 import { createCardWithData } from '../src';
 import { BasicCard } from '../src/cards';
 import { Thumbnail } from '../src/common';
-import { Button } from '../src/directions';
+import { Button, WebLinkButton } from '../src/directions';
 import { SimpleImage, SimpleText } from '../src/simple';
 
 describe('Component test', () => {
@@ -11,6 +11,7 @@ describe('Component test', () => {
     description: 'description sample',
     price: 10000,
     order_id: 1234,
+    webLinkUrl: 'https://abc.com/webLinkUrl',
   };
   const testDataList = [
     {
@@ -19,6 +20,7 @@ describe('Component test', () => {
       imageUrl: 'https://naver.com/1',
       price: 10000,
       order_id: 1111,
+      webLinkUrl: 'https://abc.com/webLinkUrl',
     },
     {
       title: 'title sample 2',
@@ -26,6 +28,7 @@ describe('Component test', () => {
       imageUrl: 'https://naver.com/2',
       price: 20000,
       order_id: 2222,
+      webLinkUrl: 'https://abc.com/webLinkUrl',
     },
   ];
   const imageUrlSample = 'https://naver.com/test.jpg';
@@ -81,6 +84,7 @@ describe('Component test', () => {
       title: '{title}',
       description: '{description}',
       thumbnail: dynamicThumbnailSample,
+      buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
     console.log(
       JSON.stringify(
@@ -95,6 +99,7 @@ describe('Component test', () => {
       title: '{title}',
       description: '{description}',
       thumbnail: dynamicThumbnailSample,
+      buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
     console.log(
       JSON.stringify(
