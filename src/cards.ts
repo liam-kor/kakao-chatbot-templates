@@ -11,7 +11,7 @@ export interface IBasicCard {
 export interface ICommerceCard {
   thumbnails: Thumbnail[];
   description: string;
-  price: number;
+  price: number | string;
   currency: string;
   buttons?: Button[];
   discount?: number;
