@@ -116,3 +116,14 @@ export class Thumbnail extends Component {
     super(fields, 'thumbnail', data);
   }
 }
+
+export class SimpleThumbnail extends Thumbnail {
+  constructor(imageUrl: string, data?: Record<string, any>) {
+    super(
+      {
+        imageUrl: imageUrl,
+      },
+      data,
+    );
+  }
+}

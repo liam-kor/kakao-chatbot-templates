@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Thumbnail = exports.SkillResponse = exports.Template = exports.Component = void 0;
+exports.SimpleThumbnail = exports.Thumbnail = exports.SkillResponse = exports.Template = exports.Component = void 0;
 const pupa_1 = __importDefault(require("pupa"));
 const replace = (fields, data) => {
     for (const [key, value] of Object.entries(fields)) {
@@ -79,3 +79,11 @@ class Thumbnail extends Component {
     }
 }
 exports.Thumbnail = Thumbnail;
+class SimpleThumbnail extends Thumbnail {
+    constructor(imageUrl, data) {
+        super({
+            imageUrl: imageUrl,
+        }, data);
+    }
+}
+exports.SimpleThumbnail = SimpleThumbnail;

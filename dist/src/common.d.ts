@@ -39,3 +39,6 @@ export interface ILink {
 export declare class Thumbnail extends Component {
     constructor(fields: IThumbnail, data?: Record<string, any>);
 }
+export declare class SimpleThumbnail extends Thumbnail {
+    constructor(imageUrl: string, data?: Record<string, any>);
+}
