@@ -12,6 +12,7 @@ export declare class ChatbotRequest {
     getParamByKey(key: string): any;
     get skillIntentCode(): any;
     get clientExtra(): any;
+    getClientExtraDataByKey(key: string): any;
     get contexts(): any;
     get block(): any;
     get blockId(): any;

@@ -48,6 +48,10 @@ export class ChatbotRequest {
     return this.action.clientExtra;
   }
 
+  getClientExtraDataByKey(key: string) {
+    return this?.clientExtra?.data[key];
+  }
+
   get contexts() {
     return this?.requestBody?.contexts;
   }

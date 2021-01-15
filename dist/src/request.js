@@ -47,6 +47,10 @@ class ChatbotRequest {
     get clientExtra() {
         return this.action.clientExtra;
     }
+    getClientExtraDataByKey(key) {
+        var _a;
+        return (_a = this === null || this === void 0 ? void 0 : this.clientExtra) === null || _a === void 0 ? void 0 : _a.data[key];
+    }
     get contexts() {
         var _a;
         return (_a = this === null || this === void 0 ? void 0 : this.requestBody) === null || _a === void 0 ? void 0 : _a.contexts;
