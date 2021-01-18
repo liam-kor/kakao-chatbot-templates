@@ -98,4 +98,20 @@ describe('Component test', () => {
         });
         console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testDataList).render(), null, 2));
     });
+    it('Create Skill Response', () => {
+        const basicCardFormat = new cards_1.BasicCard({
+            title: '{title}',
+            description: '{description}',
+            thumbnail: dynamicThumbnailSample,
+            buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
+        });
+        const carousel = src_1.createCardWithData(basicCardFormat, testDataList);
+        console.log(JSON.stringify(new common_1.SkillResponse(new common_1.Template([carousel], [
+            new directions_1.QuickReply({
+                label: 'label',
+                action: 'message',
+                messageText: 'messageText',
+            }),
+        ])), null, 2));
+    });
 });

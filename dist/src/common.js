@@ -50,8 +50,12 @@ class Component {
 exports.Component = Component;
 class Template extends Component {
     constructor(outputs, quickReplies) {
+        const renderOutputs = [];
+        for (const output of outputs) {
+            renderOutputs.push(output.render());
+        }
         const fields = {
-            outputs: outputs,
+            outputs: renderOutputs,
             quickReplies: quickReplies,
         };
         super(fields, 'template');

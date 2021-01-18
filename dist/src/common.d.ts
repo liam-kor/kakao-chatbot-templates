@@ -18,7 +18,7 @@ export declare class Component {
     toJSON(): {};
 }
 export declare class Template extends Component {
-    constructor(outputs: Record<string, any>[], quickReplies?: QuickReply[]);
+    constructor(outputs: Component[], quickReplies?: QuickReply[]);
 }
 export declare class SkillResponse extends Component {
     constructor(template: Template, context?: Context, data?: Record<string, any>);

@@ -1,7 +1,7 @@
 import { createCardWithData } from '../src';
 import { BasicCard } from '../src/cards';
-import { Thumbnail } from '../src/common';
-import { Button, WebLinkButton } from '../src/directions';
+import { SkillResponse, Template, Thumbnail } from '../src/common';
+import { Button, QuickReply, WebLinkButton } from '../src/directions';
 import { SimpleImage, SimpleText } from '../src/simple';
 
 describe('Component test', () => {
@@ -104,6 +104,33 @@ describe('Component test', () => {
     console.log(
       JSON.stringify(
         createCardWithData(basicCardFormat, testDataList).render(),
+        null,
+        2,
+      ),
+    );
+  });
+  it('Create Skill Response', () => {
+    const basicCardFormat = new BasicCard({
+      title: '{title}',
+      description: '{description}',
+      thumbnail: dynamicThumbnailSample,
+      buttons: [new WebLinkButton('label', '{webLinkUrl}')],
+    });
+    const carousel = createCardWithData(basicCardFormat, testDataList);
+    console.log(
+      JSON.stringify(
+        new SkillResponse(
+          new Template(
+            [carousel],
+            [
+              new QuickReply({
+                label: 'label',
+                action: 'message',
+                messageText: 'messageText',
+              }),
+            ],
+          ),
+        ),
         null,
         2,
       ),

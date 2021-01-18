@@ -66,9 +66,13 @@ export class Component {
 }
 
 export class Template extends Component {
-  constructor(outputs: Record<string, any>[], quickReplies?: QuickReply[]) {
+  constructor(outputs: Component[], quickReplies?: QuickReply[]) {
+    const renderOutputs = [];
+    for (const output of outputs) {
+      renderOutputs.push(output.render());
+    }
     const fields = {
-      outputs: outputs,
+      outputs: renderOutputs,
       quickReplies: quickReplies,
     };
     super(fields, 'template');
