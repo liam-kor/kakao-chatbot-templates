@@ -7,13 +7,28 @@ export const createCarouselWithData = (
   dataList: Record<string, any>[],
   header?: CarouselHeader,
 ) => {
+  // const items = [];
+  // for (const data of dataList) {
+  //   const card = _.cloneDeep(cardFormat);
+  //   card.insertData(data);
+  //   items.push(card);
+  // }
+  const items = createItems(cardFormat, dataList);
+  return new Carousel(items, header);
+};
+
+const createItems = (
+  cardFormat: CommerceCard | BasicCard,
+  dataList: Record<string, any>[],
+) => {
   const items = [];
   for (const data of dataList) {
     const card = _.cloneDeep(cardFormat);
     card.insertData(data);
     items.push(card);
   }
-  return new Carousel(items, header);
+
+  return items;
 };
 
 export const createCardWithData = (
@@ -28,3 +43,14 @@ export const createCardWithData = (
     return card;
   }
 };
+
+export class CarouselWithData extends Carousel {
+  constructor(
+    cardFormat: BasicCard | CommerceCard,
+    dataList: Record<string, any>[],
+    header?: CarouselHeader,
+  ) {
+    const items = createItems(cardFormat, dataList);
+    super(items, header);
+  }
+}

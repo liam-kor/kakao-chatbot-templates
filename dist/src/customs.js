@@ -19,17 +19,27 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createCardWithData = exports.createCarouselWithData = void 0;
+exports.CarouselWithData = exports.createCardWithData = exports.createCarouselWithData = void 0;
 const cards_1 = require("./cards");
 const _ = __importStar(require("lodash"));
 exports.createCarouselWithData = (cardFormat, dataList, header) => {
+    // const items = [];
+    // for (const data of dataList) {
+    //   const card = _.cloneDeep(cardFormat);
+    //   card.insertData(data);
+    //   items.push(card);
+    // }
+    const items = createItems(cardFormat, dataList);
+    return new cards_1.Carousel(items, header);
+};
+const createItems = (cardFormat, dataList) => {
     const items = [];
     for (const data of dataList) {
         const card = _.cloneDeep(cardFormat);
         card.insertData(data);
         items.push(card);
     }
-    return new cards_1.Carousel(items, header);
+    return items;
 };
 exports.createCardWithData = (card, data, header) => {
     if (Array.isArray(data)) {
@@ -40,3 +50,10 @@ exports.createCardWithData = (card, data, header) => {
         return card;
     }
 };
+class CarouselWithData extends cards_1.Carousel {
+    constructor(cardFormat, dataList, header) {
+        const items = createItems(cardFormat, dataList);
+        super(items, header);
+    }
+}
+exports.CarouselWithData = CarouselWithData;

@@ -87,7 +87,7 @@ describe('Component test', () => {
                 imageUrl: 'https://naver.com/123.jpg',
             },
         });
-        console.log(JSON.stringify(commerceCard.render(), null, 2));
+        // console.log(JSON.stringify(commerceCard.render(), null, 2));
     });
     it.todo('Carousel created by BasicCard');
     it.todo('Carousel created by CommerceCard');
@@ -114,13 +114,16 @@ describe('Component test', () => {
             thumbnail: dynamicThumbnailSample,
             buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
-        // console.log(
-        //   JSON.stringify(
-        //     createCardWithData(basicCardFormat, testDataList).render(),
-        //     null,
-        //     2,
-        //   ),
-        // );
+        console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testDataList).render(), null, 2));
+    });
+    it('Create Carousel with Data by CarouselWithData class', () => {
+        const basicCardFormat = new cards_1.BasicCard({
+            title: '{title}',
+            description: '{description}',
+            thumbnail: dynamicThumbnailSample,
+            buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
+        });
+        console.log(JSON.stringify(new src_1.CarouselWithData(basicCardFormat, testDataList).render(), null, 2));
     });
     it('Create Skill Response', () => {
         const basicCardFormat = new cards_1.BasicCard({

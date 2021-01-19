@@ -1,4 +1,4 @@
-import { createCardWithData } from '../src';
+import { CarouselWithData, createCardWithData } from '../src';
 import { BasicCard, CommerceCard } from '../src/cards';
 import {
   SimpleThumbnail,
@@ -91,7 +91,7 @@ describe('Component test', () => {
         imageUrl: 'https://naver.com/123.jpg',
       },
     });
-    console.log(JSON.stringify(commerceCard.render(), null, 2));
+    // console.log(JSON.stringify(commerceCard.render(), null, 2));
   });
   it.todo('Carousel created by BasicCard');
   it.todo('Carousel created by CommerceCard');
@@ -118,13 +118,28 @@ describe('Component test', () => {
       thumbnail: dynamicThumbnailSample,
       buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
-    // console.log(
-    //   JSON.stringify(
-    //     createCardWithData(basicCardFormat, testDataList).render(),
-    //     null,
-    //     2,
-    //   ),
-    // );
+    console.log(
+      JSON.stringify(
+        createCardWithData(basicCardFormat, testDataList).render(),
+        null,
+        2,
+      ),
+    );
+  });
+  it('Create Carousel with Data by CarouselWithData class', () => {
+    const basicCardFormat = new BasicCard({
+      title: '{title}',
+      description: '{description}',
+      thumbnail: dynamicThumbnailSample,
+      buttons: [new WebLinkButton('label', '{webLinkUrl}')],
+    });
+    console.log(
+      JSON.stringify(
+        new CarouselWithData(basicCardFormat, testDataList).render(),
+        null,
+        2,
+      ),
+    );
   });
   it('Create Skill Response', () => {
     const basicCardFormat = new BasicCard({
