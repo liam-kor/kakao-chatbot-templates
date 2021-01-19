@@ -36,6 +36,10 @@ export interface ILink {
     mobile?: string;
     web?: string;
 }
+export interface Profile {
+    nickname: string;
+    imageUrl?: string;
+}
 export declare class Thumbnail extends Component {
     constructor(fields: IThumbnail, data?: Record<string, any>);
 }

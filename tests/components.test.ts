@@ -1,6 +1,11 @@
 import { createCardWithData } from '../src';
-import { BasicCard } from '../src/cards';
-import { SkillResponse, Template, Thumbnail } from '../src/common';
+import { BasicCard, CommerceCard } from '../src/cards';
+import {
+  SimpleThumbnail,
+  SkillResponse,
+  Template,
+  Thumbnail,
+} from '../src/common';
 import { Button, QuickReply, WebLinkButton } from '../src/directions';
 import { SimpleImage, SimpleText } from '../src/simple';
 
@@ -73,9 +78,21 @@ describe('Component test', () => {
       ],
     });
     expect(basicCardSample).toBeDefined();
-    console.log(JSON.stringify(basicCardSample.render(), null, 2));
+    // console.log(JSON.stringify(basicCardSample.render(), null, 2));
   });
-  it.todo('Commerce card');
+  it('Commerce card', () => {
+    const commerceCard = new CommerceCard({
+      description: '상품설명',
+      price: 10000,
+      thumbnails: [new SimpleThumbnail('https://naver.com/111.jpg')],
+      currency: 'won',
+      profile: {
+        nickname: 'nickname',
+        imageUrl: 'https://naver.com/123.jpg',
+      },
+    });
+    console.log(JSON.stringify(commerceCard.render(), null, 2));
+  });
   it.todo('Carousel created by BasicCard');
   it.todo('Carousel created by CommerceCard');
   it.todo('Cards with buttons');
@@ -86,13 +103,13 @@ describe('Component test', () => {
       thumbnail: dynamicThumbnailSample,
       buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
-    console.log(
-      JSON.stringify(
-        createCardWithData(basicCardFormat, testData).render(),
-        null,
-        2,
-      ),
-    );
+    // console.log(
+    //   JSON.stringify(
+    //     createCardWithData(basicCardFormat, testData).render(),
+    //     null,
+    //     2,
+    //   ),
+    // );
   });
   it('Create Carousel with Data', () => {
     const basicCardFormat = new BasicCard({
@@ -101,13 +118,13 @@ describe('Component test', () => {
       thumbnail: dynamicThumbnailSample,
       buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
-    console.log(
-      JSON.stringify(
-        createCardWithData(basicCardFormat, testDataList).render(),
-        null,
-        2,
-      ),
-    );
+    // console.log(
+    //   JSON.stringify(
+    //     createCardWithData(basicCardFormat, testDataList).render(),
+    //     null,
+    //     2,
+    //   ),
+    // );
   });
   it('Create Skill Response', () => {
     const basicCardFormat = new BasicCard({
@@ -117,23 +134,23 @@ describe('Component test', () => {
       buttons: [new WebLinkButton('label', '{webLinkUrl}')],
     });
     const carousel = createCardWithData(basicCardFormat, testDataList);
-    console.log(
-      JSON.stringify(
-        new SkillResponse(
-          new Template(
-            [carousel],
-            [
-              new QuickReply({
-                label: 'label',
-                action: 'message',
-                messageText: 'messageText',
-              }),
-            ],
-          ),
-        ),
-        null,
-        2,
-      ),
-    );
+    // console.log(
+    //   JSON.stringify(
+    //     new SkillResponse(
+    //       new Template(
+    //         [carousel],
+    //         [
+    //           new QuickReply({
+    //             label: 'label',
+    //             action: 'message',
+    //             messageText: 'messageText',
+    //           }),
+    //         ],
+    //       ),
+    //     ),
+    //     null,
+    //     2,
+    //   ),
+    // );
   });
 });

@@ -74,9 +74,21 @@ describe('Component test', () => {
             ],
         });
         expect(basicCardSample).toBeDefined();
-        console.log(JSON.stringify(basicCardSample.render(), null, 2));
+        // console.log(JSON.stringify(basicCardSample.render(), null, 2));
     });
-    it.todo('Commerce card');
+    it('Commerce card', () => {
+        const commerceCard = new cards_1.CommerceCard({
+            description: '상품설명',
+            price: 10000,
+            thumbnails: [new common_1.SimpleThumbnail('https://naver.com/111.jpg')],
+            currency: 'won',
+            profile: {
+                nickname: 'nickname',
+                imageUrl: 'https://naver.com/123.jpg',
+            },
+        });
+        console.log(JSON.stringify(commerceCard.render(), null, 2));
+    });
     it.todo('Carousel created by BasicCard');
     it.todo('Carousel created by CommerceCard');
     it.todo('Cards with buttons');
@@ -87,7 +99,13 @@ describe('Component test', () => {
             thumbnail: dynamicThumbnailSample,
             buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
-        console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testData).render(), null, 2));
+        // console.log(
+        //   JSON.stringify(
+        //     createCardWithData(basicCardFormat, testData).render(),
+        //     null,
+        //     2,
+        //   ),
+        // );
     });
     it('Create Carousel with Data', () => {
         const basicCardFormat = new cards_1.BasicCard({
@@ -96,7 +114,13 @@ describe('Component test', () => {
             thumbnail: dynamicThumbnailSample,
             buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
-        console.log(JSON.stringify(src_1.createCardWithData(basicCardFormat, testDataList).render(), null, 2));
+        // console.log(
+        //   JSON.stringify(
+        //     createCardWithData(basicCardFormat, testDataList).render(),
+        //     null,
+        //     2,
+        //   ),
+        // );
     });
     it('Create Skill Response', () => {
         const basicCardFormat = new cards_1.BasicCard({
@@ -106,12 +130,23 @@ describe('Component test', () => {
             buttons: [new directions_1.WebLinkButton('label', '{webLinkUrl}')],
         });
         const carousel = src_1.createCardWithData(basicCardFormat, testDataList);
-        console.log(JSON.stringify(new common_1.SkillResponse(new common_1.Template([carousel], [
-            new directions_1.QuickReply({
-                label: 'label',
-                action: 'message',
-                messageText: 'messageText',
-            }),
-        ])), null, 2));
+        // console.log(
+        //   JSON.stringify(
+        //     new SkillResponse(
+        //       new Template(
+        //         [carousel],
+        //         [
+        //           new QuickReply({
+        //             label: 'label',
+        //             action: 'message',
+        //             messageText: 'messageText',
+        //           }),
+        //         ],
+        //       ),
+        //     ),
+        //     null,
+        //     2,
+        //   ),
+        // );
     });
 });

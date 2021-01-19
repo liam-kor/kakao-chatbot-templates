@@ -1,4 +1,4 @@
-import { Component, Thumbnail } from './common';
+import { Component, Profile, Thumbnail } from './common';
 import { Button } from './directions';
 export interface IBasicCard {
     title?: string;
@@ -15,6 +15,7 @@ export interface ICommerceCard {
     discount?: number;
     discountRate?: number;
     discountPrice?: number;
+    profile?: Profile;
 }
 export declare class BasicCard extends Component {
     constructor(fields: IBasicCard, data?: Record<string, any>);

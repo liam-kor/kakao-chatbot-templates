@@ -115,6 +115,11 @@ export interface ILink {
   web?: string;
 }
 
+export interface Profile {
+  nickname: string;
+  imageUrl?: string;
+}
+
 export class Thumbnail extends Component {
   constructor(fields: IThumbnail, data?: Record<string, any>) {
     super(fields, 'thumbnail', data);

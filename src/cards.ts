@@ -1,4 +1,4 @@
-import { Component, Thumbnail } from './common';
+import { Component, Profile, Thumbnail } from './common';
 import { Button } from './directions';
 
 export interface IBasicCard {
@@ -17,6 +17,7 @@ export interface ICommerceCard {
   discount?: number;
   discountRate?: number;
   discountPrice?: number;
+  profile?: Profile;
 }
 
 export class BasicCard extends Component {
