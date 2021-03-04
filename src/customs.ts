@@ -13,7 +13,7 @@ export const createCarouselWithData = (
   //   card.insertData(data);
   //   items.push(card);
   // }
-  const items = createItems(cardFormat, dataList);
+  const items: BasicCard[] | CommerceCard[] = createItems(cardFormat, dataList);
   return new Carousel(items, header);
 };
 
@@ -21,7 +21,7 @@ const createItems = (
   cardFormat: CommerceCard | BasicCard,
   dataList: Record<string, any>[],
 ) => {
-  const items = [];
+  const items: BasicCard[] | CommerceCard[] = [];
   for (const data of dataList) {
     const card = _.cloneDeep(cardFormat);
     card.insertData(data);
