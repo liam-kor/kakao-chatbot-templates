@@ -1,6 +1,6 @@
 {
   "name": "kakao-chatbot-templates",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "For It is a package to use Kakao OpenBuilder's skill template more easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "prepare": "yarn build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && yarn test && git add -A src",
     "postversion": "git push && git push --tags"
