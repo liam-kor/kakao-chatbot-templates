@@ -67,7 +67,7 @@ export class Component {
 
 export class Template extends Component {
   constructor(outputs: Component[], quickReplies?: QuickReply[]) {
-    const renderOutputs = [];
+    const renderOutputs: Record<string, any>[] = [];
     for (const output of outputs) {
       renderOutputs.push(output.render());
     }
