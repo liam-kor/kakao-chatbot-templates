@@ -1,6 +1,6 @@
 {
   "name": "kakao-chatbot-templates",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "For It is a package to use Kakao OpenBuilder's skill template more easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
