@@ -1,12 +1,7 @@
 import { CarouselWithData, createCardWithData } from '../src';
 import { BasicCard, CommerceCard } from '../src/cards';
-import {
-  SimpleThumbnail,
-  SkillResponse,
-  Template,
-  Thumbnail,
-} from '../src/common';
-import { Button, QuickReply, WebLinkButton } from '../src/directions';
+import { SimpleThumbnail, Thumbnail } from '../src/common';
+import { Button, WebLinkButton } from '../src/directions';
 import { SimpleImage, SimpleText } from '../src/simple';
 
 describe('Component test', () => {

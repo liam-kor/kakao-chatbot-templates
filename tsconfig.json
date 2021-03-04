@@ -3,8 +3,20 @@
     "target": "es2017",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./dist",
+    "declarationMap": true,
+    "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "downlevelIteration": true,
+    "baseUrl": ".", 
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {"*": ["node_modules/*"]}
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules", 
+  ]
 }
