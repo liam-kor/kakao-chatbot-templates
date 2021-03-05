@@ -1,8 +1,8 @@
 import { CarouselWithData, createCardWithData } from '../src';
-import { BasicCard, CommerceCard } from '../src/cards';
-import { SimpleThumbnail, Thumbnail } from '../src/common';
-import { Button, WebLinkButton } from '../src/directions';
-import { SimpleImage, SimpleText } from '../src/simple';
+import { BasicCard, CommerceCard } from '../src';
+import { SimpleThumbnail, Thumbnail } from '../src';
+import { Button, WebLinkButton } from '../src';
+import { SimpleImage, SimpleText } from '../src';
 
 describe('Component test', () => {
   const testData = {
