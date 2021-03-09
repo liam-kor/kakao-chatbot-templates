@@ -1,6 +1,6 @@
 {
   "name": "kakao-chatbot-templates",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "For It is a package to use Kakao OpenBuilder's skill template more easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/winz87/kakao-chatbot-templates.git"
+    "url": "https://github.com/liam-kor/kakao-chatbot-templates.git"
   },
   "keywords": [
     "kakao-chatbot"
@@ -27,9 +27,9 @@
   "author": "jhkang <winzlove@naver.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/winz87/kakao-chatbot-templates/issues"
+    "url": "https://github.com/liam-kor/kakao-chatbot-templates/issues"
   },
-  "homepage": "https://github.com/winz87/kakao-chatbot-templates#readme",
+  "homepage": "https://github.com/liam-kor/kakao-chatbot-templates#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.20",
