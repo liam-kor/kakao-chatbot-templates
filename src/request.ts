@@ -36,8 +36,15 @@ export class ChatbotRequest {
     return this?.action?.params;
   }
 
+  get detailParams() {
+    return this?.action?.detailParams;
+  }
+
   getParamByKey(key: string) {
     return this.params[key];
+  }
+  getDetailParamOriginByKey(key: string) {
+    return this.detailParams[key]?.origin;
   }
 
   get skillIntentCode() {
