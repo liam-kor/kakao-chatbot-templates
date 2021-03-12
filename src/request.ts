@@ -12,6 +12,10 @@ export class ChatbotRequest {
     return this?.bot?.id;
   }
 
+  get botIdOrigin() {
+    return this?.bot?.id.replace('!', '');
+  }
+
   get userRequest() {
     return this?.requestBody?.userRequest;
   }
