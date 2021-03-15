@@ -33,7 +33,7 @@ const replace = (fields: Record<string, any>, data: Record<string, any>) => {
 };
 
 export class Component {
-  fields = {};
+  fields: Record<string, any>;
   type = '';
 
   constructor(

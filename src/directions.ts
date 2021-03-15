@@ -18,7 +18,7 @@ export interface IQuickReply {
   action: QuickReplyAction;
   messageText?: string;
   blockId?: string;
-  extra?: any;
+  extra?: Record<string, any>;
 }
 
 export class Button extends Component {
@@ -31,7 +31,10 @@ export class Button extends Component {
     this.fields = {
       ...this.fields,
       extra: {
-        data: data,
+        ...this.fields?.extra,
+        data: {
+          ...data,
+        },
       },
     };
   }
@@ -60,7 +63,10 @@ export class QuickReply extends Component {
     this.fields = {
       ...this.fields,
       extra: {
-        data: data,
+        ...this.fields?.extra,
+        data: {
+          ...data,
+        },
       },
     };
   }
