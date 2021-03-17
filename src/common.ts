@@ -39,7 +39,7 @@ export class Component {
   constructor(
     fields: Record<string, any>,
     type: string,
-    data?: Record<string, any>,
+    data?: Record<string, any> | undefined,
   ) {
     this.fields = fields;
     this.type = type;

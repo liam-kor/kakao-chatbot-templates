@@ -21,12 +21,20 @@ export interface IQuickReply {
   extra?: Record<string, any>;
 }
 
-export class Button extends Component {
-  constructor(fields: IButton, data?: Record<string, any>) {
-    super(fields, 'button', data);
+class Direction extends Component {
+  constructor(
+    fields: IButton | IQuickReply,
+    type: 'button' | 'quickReply',
+    data?: Record<string, any> | undefined,
+  ) {
+    if (fields?.extra?.data) {
+      throw new Error(
+        'Can not use the field in extra : "data", this field is reserved. Plz read Basic card section in README.',
+      );
+    }
+    super(fields, type, data);
   }
-
-  insertData(data: any) {
+  insertData(data: Record<string, any>) {
     super.insertData(data);
     this.fields = {
       ...this.fields,
@@ -37,6 +45,12 @@ export class Button extends Component {
         },
       },
     };
+  }
+}
+
+export class Button extends Direction {
+  constructor(fields: IButton, data?: Record<string, any>) {
+    super(fields, 'button', data);
   }
 }
 
@@ -53,21 +67,8 @@ export class WebLinkButton extends Button {
   }
 }
 
-export class QuickReply extends Component {
+export class QuickReply extends Direction {
   constructor(fields: IQuickReply, data?: Record<string, any>) {
     super(fields, 'quickReply', data);
-  }
-
-  insertData(data: any) {
-    super.insertData(data);
-    this.fields = {
-      ...this.fields,
-      extra: {
-        ...this.fields?.extra,
-        data: {
-          ...data,
-        },
-      },
-    };
   }
 }
