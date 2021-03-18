@@ -40,6 +40,7 @@ class Direction extends Component {
       ...this.fields,
       extra: {
         ...this.fields?.extra,
+        createdAt: new Date(),
         data: {
           ...data,
         },

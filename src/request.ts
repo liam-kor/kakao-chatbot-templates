@@ -44,6 +44,10 @@ export class ChatbotRequest {
     return this?.action?.detailParams;
   }
 
+  get createdAt() {
+    return this?.clientExtra?.createdAt;
+  }
+
   getParamByKey(key: string) {
     return this.params[key];
   }
