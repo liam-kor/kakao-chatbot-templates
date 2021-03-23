@@ -1,6 +1,6 @@
 import { Component } from './common';
 
-type ButtonAction = 'webLink' | 'message' | 'phone' | 'block';
+type ButtonAction = 'webLink' | 'message' | 'phone' | 'block' | 'operator';
 type QuickReplyAction = 'message' | 'block';
 
 export interface IButton {
