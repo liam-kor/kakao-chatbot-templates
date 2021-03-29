@@ -55,6 +55,10 @@ export class ChatbotRequest {
     return this.detailParams[key]?.origin;
   }
 
+  get verificationValue() {
+    return this?.requestBody?.value?.origin;
+  }
+
   get skillIntentCode() {
     return this.getParamByKey('skillIntentCode');
   }
