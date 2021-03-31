@@ -1,7 +1,5 @@
 import pupa from 'pupa';
-import { BasicCard, CommerceCard } from './cards';
 import { QuickReply } from './directions';
-import { SimpleImage, SimpleText } from './simple';
 
 export interface ContextValue {
   name: string;
@@ -33,16 +31,11 @@ const replace = (fields: Record<string, any>, data: Record<string, any>) => {
 };
 
 export class Component {
-  fields: Record<string, any>;
-  type = '';
-
   constructor(
-    fields: Record<string, any>,
-    type: string,
+    protected fields: Record<string, any>,
+    public type: string,
     data?: Record<string, any> | undefined,
   ) {
-    this.fields = fields;
-    this.type = type;
     this.insertData(data);
   }
 

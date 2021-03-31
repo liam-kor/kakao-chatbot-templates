@@ -1,8 +1,5 @@
 export class ChatbotRequest {
-  requestBody: Record<string, any> = {};
-  constructor(requestBody: any) {
-    this.requestBody = requestBody;
-  }
+  constructor(public requestBody: Record<string, any>) {}
 
   get bot() {
     return this?.requestBody?.bot;

@@ -1,18 +1,11 @@
 import { BasicCard, Carousel, CarouselHeader, CommerceCard } from './cards';
 import * as _ from 'lodash';
-import { Button } from './directions';
 
 export const createCarouselWithData = (
   cardFormat: CommerceCard | BasicCard,
   dataList: Record<string, any>[],
   header?: CarouselHeader,
 ) => {
-  // const items = [];
-  // for (const data of dataList) {
-  //   const card = _.cloneDeep(cardFormat);
-  //   card.insertData(data);
-  //   items.push(card);
-  // }
   const items: BasicCard[] | CommerceCard[] = createItems(cardFormat, dataList);
   return new Carousel(items, header);
 };
